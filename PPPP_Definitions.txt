@@ -1,0 +1,65 @@
+/*Putrid Python Pristine Products*/
+
+/*drops*/
+drop table if exists Orders;
+drop table if exists Customers;
+drop table if exists Shippings;
+drop table if exists Factories;
+drop table if exists Managers;
+drop table if exists Employees;
+drop table if exists Boss;
+drop table if exists Products;
+drop table if exists Makes;
+drop table if exists Customers;
+drop table if exists Customer_Orders;
+drop table if exists Customer_Order_Details;
+drop table if exists Vendors;
+drop table if exists Partners;
+drop table if exists Vendor_Orders;
+drop table if exists Vendor_Order_Details;
+
+
+/*DB DEFINITIONS*/
+
+
+/*Factories*/
+
+/*Managers*/
+
+/*Employees*/
+
+/*Boss*/
+
+/*Products*/
+
+/*Makes*/
+
+/*Customers*/
+
+/*Customer_Orders*/
+
+/*Customer_Order_Details*/
+
+/*Vendors*/
+
+/*Partners*/
+
+/*Vendor_Orders*/
+
+/*Vendor_Order_Details*/
+
+
+
+/*INTEGRITY CONSTRAINTS*/
+
+
+
+/*VIEWS*/
+
+
+
+/*GRANT ROLES*/
+
+
+
+
