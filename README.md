@@ -6,3 +6,6 @@ We are a cleaning products supplier that makes cleaning products and sells them 
 
 ## dbdiagram.io schema link
 https://dbdiagram.io/d/PPPP-Schema-Diagram-673cec35e9daa85aca04d269
+
+## google doc link
+https://docs.google.com/document/d/1NDW_HTGeDCPVkbY7oI6tO8ZnE0oWJ9dGhUZhJa5QNm0/edit?tab=t.0
