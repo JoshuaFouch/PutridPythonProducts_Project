@@ -23,8 +23,23 @@ drop table if exists Vendor_Order_Details;
 
 
 /*Factories*/
+create table Factories (
+  Location varchar(255) primary key,
+  Factory_Name varchar(255) not null,
+  Category_Specialty varchar(100) default 'Varied'
+    check (Category_Specialty in ('Chemical', 'Tool', 'Purification', 'Varied'))
+);
 
 /*Managers*/
+create table Managers (
+  ID int primary key,
+  Name varchar(255) not null,
+  Age int check (Age >= 0),
+  Salary bigint check (Salary >= 0),
+  Hire_Date timestamp default current_timestamp,
+  Factory varchar(255),
+  foreign key (Factory) references Factories (Location)
+);
 
 /*Employees*/
 
@@ -50,7 +65,7 @@ drop table if exists Vendor_Order_Details;
 
 
 
-/*INTEGRITY CONSTRAINTS*/
+/*EXTRA INTEGRITY CONSTRAINTS*/
 
 
 
