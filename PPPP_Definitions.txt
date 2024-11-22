@@ -42,6 +42,18 @@ create table Managers (
 );
 
 /*Employees*/
+create table Employees (
+	ID int primary key,
+    Name varchar(255) not null,
+    Age int check (Age >= 0),
+    Salary bigint check (Salary >= 0),
+	Works_At varchar,
+    Manager int,
+    Role varchar(255) default 'Varied'
+    	check (Role in ('Assembly Worker', 'Janitor', 'Secretary', 'Marketing', 'IT', 'Sales', 'Varied')),
+	foreign key (Works_At) references Factories (Location),
+    foreign key (Manager) references Managers (ID)
+);
 
 /*Boss*/
 
