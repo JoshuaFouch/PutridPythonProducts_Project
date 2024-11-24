@@ -58,13 +58,9 @@ create table Employees (
 /*Boss*/
 create table Boss (
   Manager_ID int,
-  Manager_Name varchar(255),
   Employee_ID int,
-  Employee_Name varchar(255),
   foreign key (Manager_ID) references Managers (ID),
-  foreign key (Manager_Name) references Managers (Name),
-  foreign key (Employee_ID) references Employees (ID),
-  foreign key (Employee_Name) references Employees (Name)
+  foreign key (Employee_ID) references Employees (ID)
 );
 
 /*Products*/
