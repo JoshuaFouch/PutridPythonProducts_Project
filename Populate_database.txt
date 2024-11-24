@@ -1,0 +1,140 @@
+/*inserts*/
+
+
+
+/*Josh's inserts*/
+
+insert into Factories
+	values('3987 Wall Street', 'Putrid Chemicals', 'Chemical');
+    
+insert into Factories
+	values ('8887 Shift Avenue', 'ToolLand', 'Tool');
+
+insert into Managers (ID, Name, Age, Salary, Factory)
+	values (89740, 'Joe Dillingham', 51, 123000, '3987 Wall Street');
+    
+insert into Managers (ID, Name, Age, Salary, Factory)
+	values (67774, 'Sally McForknife', 45, 62000, '8887 Shift Avenue');
+
+insert into Employees
+	values (45999, 'Toaster OBagelpants', 18, 20000, '3987 Wall Street', 89740, 'Janitor'),
+    	   (47628, 'Floffle Woffleboot', 45, 45000, '8887 Shift Avenue', 67774, 'Marketing');
+
+insert into Boss
+  values (89740, 45999),
+         (67774, 47628);
+
+
+insert into Products 
+	values (12034, 'Swifter JetWet v2', 5, 34.99, 'Tool');
+
+insert into Products
+	values (65401, 'Broomba v2', 12, 23, 'Tool');
+
+insert into Makes
+	values ('3987 Wall Street', 12034, 9, 3);
+    
+insert into Makes
+	values ('8887 Shift Avenue', 65401, 9, 6);
+
+
+insert into Customers
+	values (87999, 'Clammy Wobblenoodle', 7258901345678921);
+
+insert into Customers
+	values (67458, 'Sporky McGee', 5678091234567890);
+
+
+insert into Customer_Orders (ID, Customer_ID, Total_Price)
+	values (1000001, 87999, 69);
+
+insert into Customer_Orders (ID, Customer_ID, Total_Price)
+	values (1000002, 67458, 23);
+
+insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
+values (1000001, 87999, 12034, 2);
+
+insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
+values (1000002, 67458, 65401, 1);
+
+
+
+insert into Vendors (ID, Name, Partner)
+values (50001, 'VendorCo A', 89740);
+
+insert into Vendors (ID, Name, Partner)
+values (50002, 'VendorCo B', 67774);
+
+insert into Vendor_Orders (ID, Vendor_ID, Total_Price)
+values (1000003, 50001, 105);
+
+insert into Vendor_Orders (ID, Vendor_ID, Total_Price)
+values (1000004, 50002, 69);
+
+insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
+values (1000003, 50001, 12034, 3);
+
+insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
+values (1000004, 50002, 65401, 3);
+
+
+insert into Partners
+	values (89740, 50001);
+    
+insert into Partners
+	values (67774, 50002);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
