@@ -105,9 +105,9 @@ Order_ID int,
   Product_ID int,
   Amount_Bought int check (Amount_Bought >= 0),
   Product_Price int,
-  foreign key (Order_ID) references Customer_Orders (Order_ID)
-  foreign key (Customer_ID) references Customer_Orders (Customer_ID)
-  foreign key (Product_ID) references Products (ID)
+  foreign key (Order_ID) references Customer_Orders (Order_ID),
+  foreign key (Customer_ID) references Customer_Orders (Customer_ID),
+  foreign key (Product_ID) references Products (ID),
   foreign key (Product_Price) references Products (Price)
 );
 
