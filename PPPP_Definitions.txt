@@ -146,8 +146,8 @@ create table Vendor_Order_Details (
   Product_Price float,
   foreign key (Order_ID) references Vendor_Orders (ID),
   foreign key (Vendor_ID) references Vendors (ID),
-  foreign key (Product_ID) referecnes Product (ID),
-  foreign key (Product_Price) referecnes Product (Price)
+  foreign key (Product_ID) references Product (ID),
+  foreign key (Product_Price) references Product (Price)
 );
 
 
