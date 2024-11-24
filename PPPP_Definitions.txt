@@ -79,7 +79,7 @@ create table Customer_Orders (
 Order_ID int primary key,
   Customer_ID int,
   Order_Date timestamp default current_timestamp,
-  Total_Price int
+  Total_Price int check (Total_Price >= 0)
 );
 
 /*Customer_Order_Details*/
