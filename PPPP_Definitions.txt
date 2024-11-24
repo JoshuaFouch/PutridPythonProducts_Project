@@ -92,7 +92,7 @@ create table Customers (
 
 /*Customer_Orders*/
 create table Customer_Orders (
-  Order_ID int primary key,
+  ID int primary key,
   Customer_ID int,
   Order_Date timestamp default current_timestamp,
   Total_Price int check (Total_Price >= 0),
@@ -105,8 +105,8 @@ create table Customer_Order_Details (
   Customer_ID int,
   Product_ID int,
   Amount_Bought int check (Amount_Bought >= 0),
-  foreign key (Order_ID) references Customer_Orders (Order_ID),
-  foreign key (Customer_ID) references Customer_Orders (Customer_ID),
+  foreign key (Order_ID) references Customer_Orders (ID),
+  foreign key (Customer_ID) references Customera (ID),
   foreign key (Product_ID) references Products (ID)
 );
 
@@ -140,7 +140,7 @@ create table Vendor_Order_Details (
   Order_ID int,
   Vendor_ID int,
   Product_ID int,
-  Amount_bought int,
+  Amount_bought int check (Amount_Bought >= 0),
   foreign key (Order_ID) references Vendor_Orders (ID),
   foreign key (Vendor_ID) references Vendors (ID),
   foreign key (Product_ID) references Products (ID)
