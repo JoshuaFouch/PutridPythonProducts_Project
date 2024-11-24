@@ -124,7 +124,7 @@ create table Partners (
   Manager_ID int,
   Vendor_ID int,
   foreign key (Manager_ID) references Managers (ID)
-  foreign key (Vendor_ID) references Vendor (ID)
+  foreign key (Vendor_ID) references Vendors (ID)
 );
 
 /*Vendor_Orders*/
@@ -133,7 +133,7 @@ create table Vendor_Orders (
   Vendor_ID int,
   Order_Date timestamp default current_timestamp,
   Total_Price int,
-  foreign key (Vendor_ID) references Vendor (ID)
+  foreign key (Vendor_ID) references Vendors (ID)
 );
 
 /*Vendor_Order_Details*/
