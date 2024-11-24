@@ -87,6 +87,70 @@ insert into Partners
 
 /* Seamus Inserts */
 
+INSERT INTO Factories (Location, Factory_Name, Category_Specialty ) VALUES ('4578 Mob Street', 'Garry', 'Chemical');
+
+INSERT INTO Factories (Location, Factory_Name, Category_Specialty ) VALUES ('8888 Dark Alley', 'Stephan', 'Tool');
+
+INSERT INTO Managers (ID, Name, Age, Salary, Factory) VALUES (56870, 'Toby', 13, 13300,'4578 Mob Street');
+
+INSERT INTO Managers (ID, Name, Age, Salary, Factory) VALUES (67231, 'Glenn', 48, 88900,'8888 Dark Alley');
+
+INSERT INTO Employees VALUES (54380, 'Terri', 24, 7800,'8888 Dark Alley', 67231, 'Secretary' );
+
+INSERT INTO Employees VALUES (34560, 'Dan', 32, 11900, '8888 Dark Alley', 67231, 'Sales');
+
+INSERT INTO Boss (Manager_ID, Employee_ID) VALUES (67231, 54380 );
+
+INSERT INTO Boss (Manager_ID, Employee_ID) VALUES (67231, 34560 );
+
+INSERT INTO Products (ID, Name, Stock, Price, Category ) VALUES (55555, 'Broomba Ver.1', 85, 399, 'Tool');
+
+INSERT INTO Products (ID, Name, Stock, Price, Category ) VALUES (34588, 'Swifter Jetwet Ver.1', 120, 219, 'Tool');
+
+INSERT INTO Makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced) VALUES ('8888 Dark Alley', 55555, 9, 90000);
+
+INSERT INTO Makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced) VALUES ('8888 Dark Alley', 34588, 7, 30000);
+
+INSERT INTO Customers (ID, Name, Credit_card) VALUES (98980, 'Larry', 8766343465342343);
+
+INSERT INTO Customers (ID, Name, Credit_card) VALUES (61723, 'Ike', 1723899327384721);
+
+INSERT INTO Customer_Orders (ID, Customer_ID, Total_Price) VALUES (2398683, 98980 , 19.20);
+
+INSERT INTO Customer_Orders (ID, Customer_ID, Total_Price) VALUES (7392816, 61723 , 320.18);
+
+INSERT INTO Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought) 
+VALUES (2398683, 98980, 55555, 2);
+
+INSERT INTO Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought) 
+VALUES (7392816, 61723, 34588, 1);
+
+
+INSERT INTO Vendors (ID, Name, Partner) 
+VALUES (12345, 'CleanCo Supplies', 56870);
+
+INSERT INTO Vendors (ID, Name, Partner) 
+VALUES (67890, 'TechTools Distributors', 67231);
+
+INSERT INTO Vendor_Orders (ID, Vendor_ID, Total_Price) 
+VALUES (9001, 12345, 7500.50);
+
+INSERT INTO Vendor_Orders (ID, Vendor_ID, Total_Price) 
+VALUES (9002, 67890, 12340.75);
+
+INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought) 
+VALUES (9001, 12345, 55555, 50);
+
+INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought) 
+VALUES (9002, 67890, 34588, 30);
+
+INSERT INTO Partners (Manager_ID, Vendor_ID) 
+VALUES (67231,12345);
+
+INSERT INTO Partners (Manager_ID, Vendor_ID) 
+VALUES (56870,67890);
+
+
 /*Eljay Inserts */
 
 
