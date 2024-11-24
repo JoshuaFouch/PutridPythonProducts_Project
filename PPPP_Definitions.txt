@@ -43,15 +43,15 @@ create table Managers (
 
 /*Employees*/
 create table Employees (
-	ID int primary key,
+    ID int primary key,
     Name varchar(255) not null,
     Age int check (Age >= 0),
     Salary bigint check (Salary >= 0),
-	Works_At varchar,
+    Works_At varchar,
     Manager int,
     Role varchar(255) default 'Varied'
     	check (Role in ('Assembly Worker', 'Janitor', 'Secretary', 'Marketing', 'IT', 'Sales', 'Varied')),
-	foreign key (Works_At) references Factories (Location),
+    foreign key (Works_At) references Factories (Location),
     foreign key (Manager) references Managers (ID)
 );
 
@@ -64,19 +64,35 @@ create table Boss (
 );
 
 /*Products*/
+create table Products (
+  ID int primary key,
+  Name varchar(255) not null,
+  Stock int check (Stock >= 0),
+  Price float check (Price >= 0),
+  Category varchar(255)
+  	check (Category in ('Chemical', 'Tool', 'Purification', 'Varied'))
+);
 
 /*Makes*/
+create table Makes (
+  Factory_Location varchar(255),
+  Product_ID int,
+  Quality_Grade int check ((Quality_Grade >= 0) and (Quality_Grade <= 10)),
+  Num_Produced int check (Num_Produced >= 0),
+  foreign key (Factory_Location) references Factories (Location),
+  foreign key (Product_ID) references Products (ID)
+);
 
 /*Customers*/
 create table Customers (
-ID int primary key,
+  ID int primary key,
   Name varchar(255),
-Credit_card bigint
+  Credit_card bigint
 );
 
 /*Customer_Orders*/
 create table Customer_Orders (
-Order_ID int primary key,
+  Order_ID int primary key,
   Customer_ID int,
   Order_Date timestamp default current_timestamp,
   Total_Price int check (Total_Price >= 0)
@@ -84,7 +100,7 @@ Order_ID int primary key,
 
 /*Customer_Order_Details*/
 create table Customer_Order_Details (
-Order_ID int,
+  Order_ID int,
   Customer_ID int,
   Product_ID int,
   Amount_Bought int check (Amount_Bought >=0),
@@ -93,49 +109,41 @@ Order_ID int,
 
 /*Vendors*/
 create table Vendors (
-	ID int primary key,
-    Name varchar(255) not null,
-    Partner int,
- 
-	foreign key (Partner) references Managers (ID)
+  ID int primary key,
+  Name varchar(255) not null,
+  Partner int,
+  foreign key (Partner) references Managers (ID)
 );
 
 /*Partners*/
 create table Partners (
- 	Manager_ID int,
-  	Vendor_ID int,
-  
+  Manager_ID int,
+  Vendor_ID int,
   foreign key (Manager_ID) references Managers (ID)
   foreign key (Vendor_ID) references Vendor (ID)
-  
- );
+);
 
 /*Vendor_Orders*/
 create table Vendor_Orders (
-	ID int primary key,
-    Vendor_ID int,
-    Order_Date timestamp default current_timestamp,
-    Total_Price float,
-    
-   foreign key (Vendor_ID) references Vendor (ID)
-   
- );
+  ID int primary key,
+  Vendor_ID int,
+  Order_Date timestamp default current_timestamp,
+  Total_Price float,
+  foreign key (Vendor_ID) references Vendor (ID)
+);
 
 /*Vendor_Order_Details*/
-
 create table Vendor_Order_Details (
-	Order_ID int,
-    Vendor_ID int,
-  	Product_ID int,
-  	Amount_bought int,
-  	Product_Price float,
-  	
+  Order_ID int,
+  Vendor_ID int,
+  Product_ID int,
+  Amount_bought int,
+  Product_Price float,
   foreign key (Order_ID) references Vendor_Orders (ID),
   foreign key (Vendor_ID) references Vendors (ID),
   foreign key (Product_ID) referecnes Product (ID),
   foreign key (Product_Price) referecnes Product (Price)
-  
- );
+);
 
 
 
