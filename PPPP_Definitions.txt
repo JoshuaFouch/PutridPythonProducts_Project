@@ -68,10 +68,28 @@ create table Boss (
 /*Makes*/
 
 /*Customers*/
+create table Customers (
+ID int primary key,
+  Name varchar(255),
+Credit_card bigint
+);
 
 /*Customer_Orders*/
+create table Customer_Orders (
+Order_ID int primary key,
+  Customer_ID int,
+  Order_Date timestamp default current_timestamp,
+  Total_Price int
+);
 
 /*Customer_Order_Details*/
+create table Customer_Order_Details (
+Order_ID int,
+  Customer_ID int,
+  Product_ID int,
+  Amount_Bought int check (Amount_Bought >=0),
+  Product_Price int
+);
 
 /*Vendors*/
 
