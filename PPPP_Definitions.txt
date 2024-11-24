@@ -106,7 +106,7 @@ create table Customer_Order_Details (
   Product_ID int,
   Amount_Bought int check (Amount_Bought >= 0),
   foreign key (Order_ID) references Customer_Orders (ID),
-  foreign key (Customer_ID) references Customera (ID),
+  foreign key (Customer_ID) references Customers (ID),
   foreign key (Product_ID) references Products (ID)
 );
 
@@ -122,7 +122,7 @@ create table Vendors (
 create table Partners (
   Manager_ID int,
   Vendor_ID int,
-  foreign key (Manager_ID) references Managers (ID)
+  foreign key (Manager_ID) references Managers (ID),
   foreign key (Vendor_ID) references Vendors (ID)
 );
 
