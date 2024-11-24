@@ -68,7 +68,7 @@ create table Products (
   ID int primary key,
   Name varchar(255) not null,
   Stock int check (Stock >= 0),
-  Price float check (Price >= 0),
+  Price int check (Price >= 0),
   Category varchar(255)
   	check (Category in ('Chemical', 'Tool', 'Purification', 'Varied'))
 );
@@ -95,7 +95,7 @@ create table Customer_Orders (
   Order_ID int primary key,
   Customer_ID int,
   Order_Date timestamp default current_timestamp,
-  Total_Price float check (Total_Price >= 0)
+  Total_Price int check (Total_Price >= 0)
 );
 
 /*Customer_Order_Details*/
@@ -104,7 +104,7 @@ Order_ID int,
   Customer_ID int,
   Product_ID int,
   Amount_Bought int check (Amount_Bought >=0),
-  Product_Price float,
+  Product_Price int,
   foreign key (Order_ID) references Customer_Orders (Order_ID)
   foreign key (Customer_ID) references Customer_Orders (Customer_ID)
   foreign key (Product_ID) references Products (ID)
@@ -132,7 +132,7 @@ create table Vendor_Orders (
   ID int primary key,
   Vendor_ID int,
   Order_Date timestamp default current_timestamp,
-  Total_Price float,
+  Total_Price int,
   foreign key (Vendor_ID) references Vendor (ID)
 );
 
@@ -142,7 +142,7 @@ create table Vendor_Order_Details (
   Vendor_ID int,
   Product_ID int,
   Amount_bought int,
-  Product_Price float,
+  Product_Price int,
   foreign key (Order_ID) references Vendor_Orders (ID),
   foreign key (Vendor_ID) references Vendors (ID),
   foreign key (Product_ID) references Product (ID),
