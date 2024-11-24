@@ -104,11 +104,9 @@ Order_ID int,
   Customer_ID int,
   Product_ID int,
   Amount_Bought int check (Amount_Bought >= 0),
-  Product_Price int,
   foreign key (Order_ID) references Customer_Orders (Order_ID),
   foreign key (Customer_ID) references Customer_Orders (Customer_ID),
-  foreign key (Product_ID) references Products (ID),
-  foreign key (Product_Price) references Products (Price)
+  foreign key (Product_ID) references Products (ID)
 );
 
 /*Vendors*/
@@ -142,11 +140,9 @@ create table Vendor_Order_Details (
   Vendor_ID int,
   Product_ID int,
   Amount_bought int,
-  Product_Price int,
   foreign key (Order_ID) references Vendor_Orders (ID),
   foreign key (Vendor_ID) references Vendors (ID),
-  foreign key (Product_ID) references Products (ID),
-  foreign key (Product_Price) references Products (Price)
+  foreign key (Product_ID) references Products (ID)
 );
 
 
