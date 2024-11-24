@@ -85,6 +85,11 @@ insert into Partners
 	values (67774, 50002);
 
 
+/* Seamus Inserts */
+
+/*Eljay Inserts */
+
+
 
 
 
