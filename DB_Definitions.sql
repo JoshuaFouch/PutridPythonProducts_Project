@@ -50,7 +50,7 @@ create table Factories (
 create table Managers (
   ID int primary key identity (20000, 1) check (ID <= 29999), --starts at 2000, increments by 1, cannot exceed 7 digits
   Name varchar(255) not null,
-  Age int check ((Age >= 23) and (Age <= 80)) --must be 23-80 years old
+  Age int check ((Age >= 23) and (Age <= 80)), --must be 23-80 years old
   Salary bigint check (Salary >= 0), --nonnegative constraint
   Hire_Date datetime default getdate(), --defaults to date of insertion
   Factory varchar(255),
