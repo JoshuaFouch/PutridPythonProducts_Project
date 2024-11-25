@@ -76,8 +76,8 @@ create table Employees (
 create table Boss (
   Manager_ID int,
   Employee_ID int unique, /*makes sure employee only has 1 boss*/
-  foreign key (Manager_ID) references Managers (ID) on delete cascade,
-  foreign key (Employee_ID) references Employees (ID) on delete cascade
+  foreign key (Manager_ID) references Managers (ID) on delete cascade on update cascade,
+  foreign key (Employee_ID) references Employees (ID) on delete cascade on update cascade
 );
 
 /*Products*/
@@ -140,8 +140,8 @@ create table Vendors (
 create table Partners (
   Manager_ID int,
   Vendor_ID int unique, /*ensures only one partner per vendor*/
-  foreign key (Manager_ID) references Managers (ID) on delete cascade,
-  foreign key (Vendor_ID) references Vendors (ID) on delete cascade
+  foreign key (Manager_ID) references Managers (ID) on delete cascade on update cascade,
+  foreign key (Vendor_ID) references Vendors (ID) on delete cascade on update cascade
 );
 
 /*Vendor_Orders*/
