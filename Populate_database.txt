@@ -153,6 +153,79 @@ VALUES (56870,67890);
 
 /*Eljay Inserts */
 
+insert into factories
+values ('3456 Wall St.', 'Patrick' , 'Chemical'),
+		('1010 Python St.','Putrid', 'Purification');
+
+insert into managers (ID, Name, Age, Salary, Factory)
+values (51627, 'Among Us', 32, 90000, '3456 Wall St.'),
+	(58230, 'Us Among', 23, 90001, '1010 Python St.');
+
+insert into employees 
+values (57302, 'Gronky', 54, 90000, '3456 Wall St.', 58230, 'Sales'),
+	(30460, 'Glob', 43, 90001, '1010 Python St.', 51627, 'Marketing');
+
+insert into boss
+values (51627,30460),
+	(58230, 57302);
+
+insert into Products (ID, Name, Stock, Price, Category) values
+(12354, 'Acetone', 50, 12, 'Chemical'),
+(26422, 'Wrench Set', 25, 45, 'Tool');
+
+insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
+values ('3456 Wall St.',12354 , 5, 15);
+
+insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
+values ('1010 Python St.',26422 , 8, 25);
+
+insert into customers
+values (78957, 'Poppy', 3214475869700685),
+	(89403, 'Huggie', 5320123540581321);
+
+
+insert into Customer_Orders (ID, Customer_ID, Total_Price)
+values (1435434, 78957, 89);
+
+insert into Customer_Orders (ID, Customer_ID, Total_Price)
+values(3252534, 89403, 34);
+
+
+insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
+values(1435434, 78957, 12354, 5);
+
+insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
+values(3252534, 89403, 26422, 10);
+
+
+
+insert into vendors (ID, Name, Partner)
+values (90901, 'Krabby Patty', 51627);
+
+insert into vendors (ID, Name, Partner)
+values (90902, 'Chum Bucket', 58230);
+
+
+insert into vendor_orders (ID, Vendor_ID, Total_Price)
+values (4321752, 90901, 89);
+
+insert into vendor_orders (ID, Vendor_ID, Total_Price)
+values (5632785, 90902, 34);
+
+
+insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
+values (4321752, 90901, 12354, 8);
+
+insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
+values (5632785, 90902, 26422, 9);
+
+
+insert into Partners
+	values (51627, 90901);
+    
+insert into Partners
+	values (58230, 90902);
+
 
 
 
