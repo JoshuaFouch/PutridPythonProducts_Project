@@ -1,6 +1,7 @@
 /*Putrid Python Pristine Products*/
 
-/*drops*/
+--drops for programmiz
+/*
 drop table if exists Orders;
 drop table if exists Customers;
 drop table if exists Shippings;
@@ -17,11 +18,26 @@ drop table if exists Vendors;
 drop table if exists Partners;
 drop table if exists Vendor_Orders;
 drop table if exists Vendor_Order_Details;
+*/
 
+--drops to DELETE ALL RELATIONS
+/*
+drop table if exists Vendor_Order_Details;
+drop table if exists Vendor_Orders;
+drop table if exists Partners;
+drop table if exists Vendors;
+drop table if exists Customer_Order_Details;
+drop table if exists Customer_Orders;
+drop table if exists Customers;
+drop table if exists Makes;
+drop table if exists Products;
+drop table if exists Boss;
+drop table if exists Employees;
+drop table if exists Managers;
+drop table if exists Factories;
+*/
 
 /*DB DEFINITIONS*/
-
-
 /*Factories*/
 create table Factories (
   Location varchar(255) primary key,
