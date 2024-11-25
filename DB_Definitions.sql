@@ -36,7 +36,7 @@ create table Managers (
   Name varchar(255) not null,
   Age int check (Age >= 0),
   Salary bigint check (Salary >= 0),
-  Hire_Date varchar(255) default getdate(),
+  Hire_Date datetime default getdate(),
   Factory varchar(255),
   foreign key (Factory) references Factories (Location)
 );
@@ -95,7 +95,7 @@ create table Customers (
 create table Customer_Orders (
   ID int primary key,
   Customer_ID int,
-  Order_Date varchar(255) default getdate(),
+  Order_Date datetime default getdate(),
   Total_Price int check (Total_Price >= 0),
   foreign key (Customer_ID) references Customers (ID)
 );
@@ -131,7 +131,7 @@ create table Partners (
 create table Vendor_Orders (
   ID int primary key,
   Vendor_ID int,
-  Order_Date varchar(255) default getdate(),
+  Order_Date datetime default getdate(),
   Total_Price int,
   foreign key (Vendor_ID) references Vendors (ID)
 );
