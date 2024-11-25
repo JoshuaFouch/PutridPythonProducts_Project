@@ -9,18 +9,6 @@ BEGIN
     FROM inserted;
 END;
 
-
-CREATE OR ALTER TRIGGER Delete_From_Boss
-ON Employees
-AFTER DELETE
-AS
-BEGIN
-    DELETE FROM Boss
-    WHERE Employee_ID IN (SELECT ID FROM deleted);
-END;
-
-
-
 CREATE OR ALTER TRIGGER Add_To_Partner
 ON Vendors
 AFTER INSERT
@@ -32,11 +20,3 @@ BEGIN
 END;
 
 
-CREATE OR ALTER TRIGGER Delete_From_Partner
-ON Vendors
-AFTER DELETE
-AS
-BEGIN
-    DELETE FROM Partners
-    WHERE Vendor_ID IN (SELECT ID FROM deleted);
-END;
