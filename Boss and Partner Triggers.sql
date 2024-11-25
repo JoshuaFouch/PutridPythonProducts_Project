@@ -1,0 +1,42 @@
+
+CREATE OR ALTER TRIGGER Add_To_Boss
+ON Employees
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO Boss (Manager_ID, Employee_ID)
+    SELECT Manager, ID
+    FROM inserted;
+END;
+
+
+CREATE OR ALTER TRIGGER Delete_From_Boss
+ON Employees
+AFTER DELETE
+AS
+BEGIN
+    DELETE FROM Boss
+    WHERE Employee_ID IN (SELECT ID FROM deleted);
+END;
+
+
+
+CREATE OR ALTER TRIGGER Add_To_Partner
+ON Vendors
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO Partners (Manager_ID, Vendor_ID)
+    SELECT Partner, ID
+    FROM inserted;
+END;
+
+
+CREATE OR ALTER TRIGGER Delete_From_Partner
+ON Vendors
+AFTER DELETE
+AS
+BEGIN
+    DELETE FROM Partners
+    WHERE Vendor_ID IN (SELECT ID FROM deleted);
+END;
