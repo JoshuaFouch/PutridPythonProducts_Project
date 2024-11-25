@@ -116,13 +116,14 @@ create table Vendors (
   ID int primary key,
   Name varchar(255) not null,
   Partner int,
-  foreign key (Partner) references Managers (ID)
+  foreign key (Partner) references Managers (ID),
+  unique (ID, Partner) /*one partner per vendor*/
 );
 
 /*Partners*/
 create table Partners (
   Manager_ID int,
-  Vendor_ID int,
+  Vendor_ID int unique, /*ensures only one partner per vendor*/
   foreign key (Manager_ID) references Managers (ID),
   foreign key (Vendor_ID) references Vendors (ID)
 );
