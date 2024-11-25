@@ -153,8 +153,8 @@ insert into managers (ID, Name, Age, Salary, Factory)
 		(20005, 'Us Among', 23, 90001, '1010 Python St.');
 
 insert into employees 
-	values (30004, 'Gronky', 54, 90000, '3456 Wall St.', 20005, 'Sales'),
-	(30005, 'Glob', 43, 90001, '1010 Python St.', 20004, 'Marketing');
+	values (30004, 'Gronky', 54, 90000, '3456 Wall St.', 20004, 'Sales'),
+	(30005, 'Glob', 43, 90001, '1010 Python St.', 20005, 'Marketing');
 
 
 insert into Products (ID, Name, Stock, Price, Category) 
