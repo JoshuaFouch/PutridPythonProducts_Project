@@ -73,10 +73,10 @@ values
 
 /*makes*/
 insert into Makes
-	values ('3987 Wall Street', 12034, 9, 3);
+	values ('3987 Wall Street', 40000, 9, 3);
     
 insert into Makes
-	values ('8887 Shift Avenue', 65401, 9, 6);
+	values ('8887 Shift Avenue', 40001, 9, 6);
 
 INSERT INTO Makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced) 
 	VALUES ('8899 Dark Alley', 40002, 9, 90000);
