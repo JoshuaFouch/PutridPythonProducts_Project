@@ -37,6 +37,28 @@ drop table if exists Managers;
 drop table if exists Factories;
 */
 
+/* sequence deletion if needed */
+/*
+drop sequence if exists Factories_Seq;
+drop sequence if exists Managers_Seq;
+drop sequence if exists Employees_Seq;
+drop sequence if exists Products_Seq;
+drop sequence if exists Customers_Seq;
+drop sequence if exists Customer_Orders_Seq;
+drop sequence if exists Vendors_Seq;
+drop sequence if exists Vendor_Orders_Seq; 
+*/
+
+/* sequences for IDs */
+create sequence Managers_Seq start with 20000 increment by 1 cache 1;
+create sequence Employees_Seq start with 30000 increment by 1 cache 1;
+create sequence Products_Seq start with 40000 increment by 1 cache 1;
+create sequence Customers_Seq start with 50000 increment by 1 cache 1;
+create sequence Customer_Orders_Seq start with 1000000 increment by 1 cache 1;
+create sequence Vendors_Seq start with 60000 increment by 1 cache 1;
+create sequence Vendor_Orders_Seq start with 2000000 increment by 1 cache 1;
+
+
 /*DB DEFINITIONS*/
 /*Factories*/
 create table Factories (
