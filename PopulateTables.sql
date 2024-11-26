@@ -122,10 +122,10 @@ insert into Customer_Orders (Customer_ID, Total_Price)
 INSERT INTO Customer_Orders (Customer_ID, Total_Price) 
 	VALUES (50002 , 19);
 
-INSERT INTO Customer_Orders (ID, Customer_ID, Total_Price) 
+INSERT INTO Customer_Orders (Customer_ID, Total_Price) 
 	VALUES (50003 , 320);
 
-insert into Customer_Orders (ID, Customer_ID, Total_Price)
+insert into Customer_Orders (Customer_ID, Total_Price)
 	values (50004, 89);
 
 insert into Customer_Orders (Customer_ID, Total_Price)
