@@ -106,7 +106,7 @@ create table Makes (
 create table Customers (
   ID int primary key identity (50000, 1) check (ID <= 59999),
   Name varchar(255),
-  Credit_card bigint Credit_Card bigint check (len(cast(Credit_Card as varchar)) = 16)
+  Credit_card bigint check (len(Credit_Card) = 16)
 );
 
 /*Customer_Orders*/
