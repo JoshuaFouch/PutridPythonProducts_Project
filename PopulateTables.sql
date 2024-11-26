@@ -6,14 +6,14 @@ insert into Factories
 	values ('8887 Shift Avenue', 'ToolLand', 'Tool');
 
 INSERT INTO Factories (Location, Factory_Name, Category_Specialty ) 
-	VALUES ('4578 Mob Street', 'Garry', 'Chemical');
+	VALUES ('4578 Mob Street', 'TheLand', 'Chemical');
 
 INSERT INTO Factories (Location, Factory_Name, Category_Specialty ) 
-	VALUES ('8888 Dark Alley', 'Stephan', 'Tool');
+	VALUES ('8899 Dark Alley', 'Stephans Shop', 'Tool');
 
 insert into Factories
-	values ('3456 Wall St.', 'Patrick' , 'Chemical'),
-	       ('1010 Python St.','Putrid', 'Purification');
+	values ('3456 Goofy Street', 'Patricks Place' , 'Chemical'),
+	       ('1010 Python Street','Putrid Plaza', 'Purification');
 
 
 /*Managers*/
@@ -24,16 +24,14 @@ insert into Managers (Name, Age, Salary, Factory)
 	values ('Sally McForknife', 45, 62000, '8887 Shift Avenue');
 
 INSERT INTO Managers (Name, Age, Salary, Factory) 
-	VALUES ('Toby', 13, 13300,'4578 Mob Street');
+	VALUES ('Toby', 23, 13300,'4578 Mob Street');
 
 INSERT INTO Managers (Name, Age, Salary, Factory) 
-	VALUES ('Glenn', 48, 88900,'8888 Dark Alley');
+	VALUES ('Glenn', 48, 88900,'8899 Dark Alley');
 
-insert into managers (Name, Age, Salary, Factory)
-	values ('Among Us', 32, 90000, '3456 Wall St.'),
-	       ('Us Among', 23, 90001, '1010 Python St.');
-
-
+insert into Managers (Name, Age, Salary, Factory)
+	values ('Among Us', 32, 90000, '3456 Goofy Street'),
+	       ('Us Among', 23, 90001, '1010 Python Street');
 
 
 /*Employees*/
@@ -42,14 +40,14 @@ insert into Employees (Name, Age, Salary, Works_At, Manager, Role)
     	       ('Floffle Woffleboot', 45, 45000, '8887 Shift Avenue', 20001, 'Marketing');
 
 INSERT INTO Employees (Name, Age, Salary, Works_At, Manager, Role)
-	VALUES ('Terri', 24, 7800,'8888 Dark Alley', 20002, 'Secretary' );
+	VALUES ('Terri', 24, 7800,'8899 Dark Alley', 20002, 'Secretary' );
 
 INSERT INTO Employees (Name, Age, Salary, Works_At, Manager, Role)
-	VALUES ('Dan', 32, 11900, '8888 Dark Alley', 20003, 'Sales');
+	VALUES ('Dan', 32, 11900, '8899 Dark Alley', 20003, 'Sales');
 
 insert into employees (Name, Age, Salary, Works_At, Manager, Role)
-	values ('Gronky', 54, 90000, '3456 Wall St.', 20004, 'Sales'),
-	('Glob', 43, 90001, '1010 Python St.', 20005, 'Marketing');
+	values ('Gronky', 54, 90000, '3456 Goofy Street', 20004, 'Sales'),
+	('Glob', 43, 90001, '1010 Python Street', 20005, 'Marketing');
 
 
 
@@ -81,16 +79,16 @@ insert into Makes
 	values ('8887 Shift Avenue', 65401, 9, 6);
 
 INSERT INTO Makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced) 
-	VALUES ('8888 Dark Alley', 40002, 9, 90000);
+	VALUES ('8899 Dark Alley', 40002, 9, 90000);
 
 INSERT INTO Makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced) 
-	VALUES ('8888 Dark Alley', 40003, 7, 30000);
+	VALUES ('8899 Dark Alley', 40003, 7, 30000);
 
 insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
-	values ('3456 Wall St.', 40004, 5, 15);
+	values ('3456 Goofy Street', 40004, 5, 15);
 
 insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
-	values ('1010 Python St.', 40005, 8, 25);
+	values ('1010 Python Street', 40005, 8, 25);
 
 
 
