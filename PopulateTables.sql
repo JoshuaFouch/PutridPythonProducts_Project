@@ -15,6 +15,11 @@ insert into Factories
 	values ('3456 Goofy Street', 'Patricks Place' , 'Chemical'),
 	       ('1010 Python Street','Putrid Plaza', 'Purification');
 
+insert into Factories
+	values('5678 Neon Boulevard', 'ElectroWorks', 'Tool'),
+	       ('9999 Glass Road', 'ClearCo', 'Purification'),
+	       ('1111 Rock Lane', 'MineralCraft', 'Chemical');
+
 
 /*Managers*/
 insert into Managers (Name, Age, Salary, Factory)
@@ -33,6 +38,11 @@ insert into Managers (Name, Age, Salary, Factory)
 	values ('Among Us', 32, 90000, '3456 Goofy Street'),
 	       ('Us Among', 23, 90001, '1010 Python Street');
 
+insert into Managers (Name, Age, Salary, Factory)
+	values ('Nancy Tools', 40, 70000, '5678 Neon Boulevard'),
+	       ('Peter Glassman', 50, 85000, '9999 Glass Road'),
+	       ('Rocky Stone', 35, 65000, '1111 Rock Lane');
+
 
 /*Employees*/
 insert into Employees (Name, Age, Salary, Works_At, Manager, Role)
@@ -48,6 +58,11 @@ INSERT INTO Employees (Name, Age, Salary, Works_At, Manager, Role)
 insert into employees (Name, Age, Salary, Works_At, Manager, Role)
 	values ('Gronky', 54, 90000, '3456 Goofy Street', 20004, 'Sales'),
 	('Glob', 43, 90001, '1010 Python Street', 20005, 'Marketing');
+
+insert into Employees (Name, Age, Salary, Works_At, Manager, Role)
+	values ('Elena Sparks', 29, 38000, '5678 Neon Boulevard', 20006, 'IT'),
+	       ('John Clear', 33, 45000, '9999 Glass Road', 20007, 'Janitor'),
+	       ('Marsha Pebbles', 41, 51000, '1111 Rock Lane', 20008, 'Assembly Worker');
 
 
 
@@ -69,6 +84,10 @@ values
 	('Acetone', 50, 12, 'Chemical'),
 	('Wrench Set', 25, 45, 'Tool');
 
+insert into Products (Name, Stock, Price, Category)
+	values ('Spark Drill', 20, 120, 'Tool'),
+	       ('Purity Filter', 45, 60, 'Purification'),
+	       ('Quartz Cleaner', 30, 35, 'Chemical');
 
 
 /*makes*/
@@ -90,7 +109,10 @@ insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
 insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
 	values ('1010 Python Street', 40005, 8, 25);
 
-
+insert into Makes
+	values ('5678 Neon Boulevard', 40006, 8, 200),
+	       ('9999 Glass Road', 40007, 7, 100),
+	       ('1111 Rock Lane', 40008, 9, 150);
 
 
 /*customers*/
@@ -109,6 +131,11 @@ INSERT INTO Customers (Name, Credit_card)
 insert into customers (Name, Credit_card)
 	values ('Poppy', 3214475869700685),
 	       ('Huggie', 5320450040581321);
+
+insert into Customers (Name, Credit_card)
+	values ('Timmy Bright', 4111222233334444),
+	       ('Sally Clean', 5555666677778888),
+	       ('Tom Strong', 1234567812345678);
 
 
 
@@ -131,6 +158,10 @@ insert into Customer_Orders (Customer_ID, Total_Price)
 insert into Customer_Orders (Customer_ID, Total_Price)
 	values(50005, 34);
 
+insert into Customer_Orders (Customer_ID, Total_Price)
+	values (50006, 150),
+	       (50007, 200),
+	       (50008, 300);
 
 
 /*customer order details*/
@@ -152,6 +183,10 @@ insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bo
 insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
 	values(1000005, 50005, 40005, 10);
 
+insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
+	values (1000006, 50006, 40006, 2),
+	       (1000007, 50007, 40007, 4),
+	       (1000008, 50008, 40008, 6);
 
 
 /*vendors*/
@@ -173,6 +208,10 @@ insert into vendors (Name, Partner)
 insert into vendors (Name, Partner)
 	values ('Chum Bucket', 20005);
 
+insert into Vendors (Name, Partner)
+	values ('Shiny Supplies Co.', 20006),
+	       ('Glass Gear Inc.', 20007),
+	       ('Rock Builders Ltd.', 20008);
 
 
 /*vendor orders*/
@@ -194,6 +233,10 @@ insert into Vendor_Orders (Vendor_ID, Total_Price)
 insert into Vendor_Orders (Vendor_ID, Total_Price)
 	values (60005, 34);
 
+insert into Vendor_Orders (Vendor_ID, Total_Price)
+	values (60006, 450),
+	       (60007, 300),
+	       (60008, 520);
 
 
 
@@ -215,6 +258,12 @@ insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought
 
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
 	values (1000005, 60005, 40005, 9);
+
+insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
+	values (1000006, 60006, 40006, 10),
+	       (1000007, 60007, 40007, 15),
+	       (1000008, 60008, 40008, 20);
+
 
 
 
