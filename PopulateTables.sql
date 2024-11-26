@@ -23,15 +23,15 @@ insert into Managers (Name, Age, Salary, Factory)
 insert into Managers (Name, Age, Salary, Factory)
 	values ('Sally McForknife', 45, 62000, '8887 Shift Avenue');
 
-INSERT INTO Managers (ID, Name, Age, Salary, Factory) 
-	VALUES (20002, 'Toby', 13, 13300,'4578 Mob Street');
+INSERT INTO Managers (Name, Age, Salary, Factory) 
+	VALUES ('Toby', 13, 13300,'4578 Mob Street');
 
-INSERT INTO Managers (ID, Name, Age, Salary, Factory) 
-	VALUES (20003, 'Glenn', 48, 88900,'8888 Dark Alley');
+INSERT INTO Managers (Name, Age, Salary, Factory) 
+	VALUES ('Glenn', 48, 88900,'8888 Dark Alley');
 
-insert into managers (ID, Name, Age, Salary, Factory)
-	values (20004, 'Among Us', 32, 90000, '3456 Wall St.'),
-	       (20005, 'Us Among', 23, 90001, '1010 Python St.');
+insert into managers (Name, Age, Salary, Factory)
+	values ('Among Us', 32, 90000, '3456 Wall St.'),
+	       ('Us Among', 23, 90001, '1010 Python St.');
 
 
 
@@ -44,7 +44,7 @@ insert into Employees (Name, Age, Salary, Works_At, Manager, Role)
 INSERT INTO Employees (Name, Age, Salary, Works_At, Manager, Role)
 	VALUES ('Terri', 24, 7800,'8888 Dark Alley', 20002, 'Secretary' );
 
-INSERT INTO Employees 
+INSERT INTO Employees (Name, Age, Salary, Works_At, Manager, Role)
 	VALUES ('Dan', 32, 11900, '8888 Dark Alley', 20003, 'Sales');
 
 insert into employees (Name, Age, Salary, Works_At, Manager, Role)
@@ -121,17 +121,17 @@ insert into Customer_Orders (Customer_ID, Total_Price)
 insert into Customer_Orders (Customer_ID, Total_Price)
 	values (50001, 23);
 
-INSERT INTO Customer_Orders (ID, Customer_ID, Total_Price) 
-	VALUES (1000005, 50002 , 19);
+INSERT INTO Customer_Orders (Customer_ID, Total_Price) 
+	VALUES (50002 , 19);
 
 INSERT INTO Customer_Orders (ID, Customer_ID, Total_Price) 
-	VALUES (1000006, 50003 , 320);
+	VALUES (50003 , 320);
 
 insert into Customer_Orders (ID, Customer_ID, Total_Price)
-	values (1000009, 50004, 89);
+	values (50004, 89);
 
-insert into Customer_Orders (ID, Customer_ID, Total_Price)
-	values(1000010, 50005, 34);
+insert into Customer_Orders (Customer_ID, Total_Price)
+	values(50005, 34);
 
 
 
@@ -143,16 +143,16 @@ insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bo
 values (1000001, 50001, 40001, 1);
 
 INSERT INTO Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought) 
-	VALUES (1000005, 50002, 40002, 2);
+	VALUES (1000002, 50002, 40002, 2);
 
 INSERT INTO Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought) 
-	VALUES (1000006, 50003, 40003, 1);
+	VALUES (1000003, 50003, 40003, 1);
 
 insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
-	values(1000009, 50004, 40004, 5);
+	values(1000004, 50004, 40004, 5);
 
 insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
-	values(1000010, 50005, 40005, 10);
+	values(1000005, 50005, 40005, 10);
 
 
 
@@ -163,17 +163,17 @@ values ('Walmart', 20000);
 insert into Vendors (Name, Partner)
 values ('Home Depot', 20001);
 
-INSERT INTO Vendors (ID, Name, Partner) 
-	VALUES (60002, 'CleanCo Supplies', 20002);
+INSERT INTO Vendors (Name, Partner) 
+	VALUES ('CleanCo Supplies', 20002);
 
-INSERT INTO Vendors (ID, Name, Partner) 
-	VALUES (60003, 'TechTools Distributors', 20003);
+INSERT INTO Vendors (Name, Partner) 
+	VALUES ('TechTools Distributors', 20003);
 
-insert into vendors (ID, Name, Partner)
-	values (60004, 'Krabby Patty', 20004);
+insert into vendors (Name, Partner)
+	values ('Krabby Patty', 20004);
 
-insert into vendors (ID, Name, Partner)
-	values (60005, 'Chum Bucket', 20005);
+insert into vendors (Name, Partner)
+	values ('Chum Bucket', 20005);
 
 
 
@@ -184,39 +184,39 @@ values (60000, 105);
 insert into Vendor_Orders (Vendor_ID, Total_Price)
 values (60001, 69);
 
-INSERT INTO Vendor_Orders (ID, Vendor_ID, Total_Price) 
-	VALUES (1000007, 60002, 7500);
+INSERT INTO Vendor_Orders (Vendor_ID, Total_Price) 
+	VALUES (60002, 7500);
 
-INSERT INTO Vendor_Orders (ID, Vendor_ID, Total_Price) 
-	VALUES (1000008, 60003, 12340);
+INSERT INTO Vendor_Orders (Vendor_ID, Total_Price) 
+	VALUES (60003, 12340);
 
-insert into Vendor_Orders (ID, Vendor_ID, Total_Price)
-	values (1000011, 60004, 89);
+insert into Vendor_Orders (Vendor_ID, Total_Price)
+	values (60004, 89);
 
-insert into Vendor_Orders (ID, Vendor_ID, Total_Price)
-	values (1000012, 60005, 34);
+insert into Vendor_Orders (Vendor_ID, Total_Price)
+	values (60005, 34);
 
 
 
 
 /*vendor order details*/
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-values (1000002, 60000, 40000, 3);
+values (2000000, 60000, 40000, 3);
 
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-values (1000003, 60001, 40001, 3);
+values (2000001, 60001, 40001, 3);
 
 INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought) 
-	VALUES (1000007, 60002, 40002, 50);
+	VALUES (2000002, 60002, 40002, 50);
 
 INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought) 
-	VALUES (1000008, 60003, 40003, 30);
+	VALUES (2000003, 60003, 40003, 30);
 
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-	values (1000011, 60004, 40004, 8);
+	values (2000004, 60004, 40004, 8);
 
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-	values (1000012, 60005, 40005, 9);
+	values (2000005, 60005, 40005, 9);
 
 
 
