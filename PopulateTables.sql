@@ -199,22 +199,22 @@ insert into Vendor_Orders (Vendor_ID, Total_Price)
 
 /*vendor order details*/
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-values (2000000, 60000, 40000, 3);
+values (1000000, 60000, 40000, 3);
 
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-values (2000001, 60001, 40001, 3);
+values (1000001, 60001, 40001, 3);
 
 INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought) 
-	VALUES (2000002, 60002, 40002, 50);
+	VALUES (1000002, 60002, 40002, 50);
 
 INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought) 
-	VALUES (2000003, 60003, 40003, 30);
+	VALUES (1000003, 60003, 40003, 30);
 
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-	values (2000004, 60004, 40004, 8);
+	values (1000004, 60004, 40004, 8);
 
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Bought)
-	values (2000005, 60005, 40005, 9);
+	values (1000005, 60005, 40005, 9);
 
 
 
