@@ -1,0 +1,46 @@
+/*
+How it's structured:
+
+View Info
+Role
+
+*/
+Factories
+--shows basic factory info
+create view FactoryInfo as
+select Location, Factory_name, Category_Specialty
+from Factories
+
+--creating role for factory managers
+create role FactoryManager
+grant select, insert, update, delete
+on Factories
+to FactoryManager;
+
+Managers
+--view for manager details (for managmanet purposes?)
+create view ManagerDetails as 
+select ID, Name, Age, Salary, Hire_Date, Factory
+from Managers;
+
+
+--creating role for HR (human Resourses)
+create role HRManager
+grant select, insert, update
+on Managers
+to HRManager;
+
+Employees
+--create view for employee information
+create view EmployeeDetails as
+select ID, Name, Age, Salary, Works_At, Manager, Role
+from Employees;
+
+--operatoions team could manage employee data
+create role OPTeam
+grant select, insert, update, delete
+on Employees
+to OPTeam;
+
+
+
