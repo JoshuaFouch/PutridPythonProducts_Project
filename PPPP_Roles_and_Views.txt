@@ -1,3 +1,37 @@
+-- ManagerDashboard
+create view ManagerDashboard as
+select 
+	-- from Managers
+	M.ID AS Manager_ID,
+    M.Name AS Manager_Name,
+    M.Age AS Manager_Age,
+    M.Salary AS Manager_Salary,
+    M.Hire_Date AS Manager_Hire_Date,
+    M.Factory AS Assigned_Factory,
+
+	-- Factory info
+	F.Factory_Name AS Factory_Name,
+	F.Category_Specialty AS Factory_Specialty,
+	
+
+	-- Partners info
+	P.Vendor_ID AS MyPartner_ID,
+	V.Name AS MyPartner_Name,
+
+	-- My Employees
+	E.ID AS MyEmployee_IDs,
+	E.Name AS MyEmployee_Names,
+	E.Role AS Employee_Roles
+
+from Managers M 
+left join Factories F on M.Factory = F. Location
+left join Partners P on M.ID = P.Manager_ID
+left join Vendors V on P.Vendor_ID = V.ID
+left join Employees E on M.ID = E.Manager;
+
+
+
+
 --EmployeeDashboard View
 
 create view EmployeeDashboard as
