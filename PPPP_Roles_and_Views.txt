@@ -5,7 +5,7 @@ View Info
 Role
 
 */
-Factories
+/*Factories*/
 --shows basic factory info
 create view FactoryInfo as
 select Location, Factory_name, Category_Specialty
@@ -17,7 +17,7 @@ grant select, insert, update, delete
 on Factories
 to FactoryManager;
 
-Managers
+/*Managers*/
 --view for manager details (for managmanet purposes?)
 create view ManagerDetails as 
 select ID, Name, Age, Salary, Hire_Date, Factory
@@ -30,17 +30,115 @@ grant select, insert, update
 on Managers
 to HRManager;
 
-Employees
+/*Employees*/
 --create view for employee information
 create view EmployeeDetails as
 select ID, Name, Age, Salary, Works_At, Manager, Role
 from Employees;
 
---operatoions team could manage employee data
+--operations team could manage employee data
 create role OPTeam
 grant select, insert, update, delete
 on Employees
 to OPTeam;
+
+/*Products*/
+--creating view to show product catalog
+create view ProductCatalog as
+select ID, Name, Stock, Price, Category
+from Products;
+
+
+--create role for sales team (people to view info in Product Catalog)
+create role SalesTeam
+grant select, insert, update
+on Products
+to SalesTeam;
+
+/*Makes*/
+--create view ProductionDetails AS
+create view ProductionDetails as
+select Factory_Location, Product_ID, Quality_Grade, Num_Produced
+from Makes;
+
+--create role for production managers
+create role ProductionManager
+grant select, insert, update
+on Makes
+to ProductionManager;
+
+/*Customer*/
+--create view to show customer information
+create view CustomerDetails as
+select ID, Name, Credit_card
+from Customers;
+
+--create role for customer service team
+create role CustomerService
+grant select, insert, update
+on Customers
+to CustomerService;
+
+/*Customer Orders*/
+--create view to show order details
+create view OrderDetails as
+select ID, Customer_ID, Order_Date, Total_Price
+from Customer_Orders;
+
+--create role for order processing team
+create role OrderProcessing
+grant select, insert, update
+on Customer_Orders
+to OrderProcessing;
+
+/*Customer Order Details*/
+--create view to show order line items (what products the customer has)
+create view OrderLineItems as
+select Order_ID, Customer_ID, Product_ID, Amount_Bought
+FROM Customer_Order_Details;
+
+--create role for order fulfillment team (provide the access to line-item details of customer orders)
+create role OrderFulfillment
+grant select, insert, update
+on Customer_Order_Details
+to OrderFulfillment;
+
+/*Vendor*/
+--create view to show vendor infortmation
+create view VendorDetails as
+select ID, Name, Partner
+from Vendors;
+
+--create role for procurement team (meaning the process of sourcing, purchasing, receiving, and inspecting all of the goods and services your business needs to operate)
+create role ProcurementTeam
+grant select, insert, update
+on Vendors
+to ProcurementTeam;
+
+/*Vendor Orders*/
+--create view to show vendor order details
+create view VendorOrderDetails as
+select ID, Vendor_ID, Order_Date, Total_Price
+from Vendor_Order
+
+--create role vendor management team (vendor managers can use to track things like order history and purchases)
+create role VendorManager
+grant select, insert, update
+on Vendor_Orders
+to VendorManager;
+
+/*Vendor Order Details*/
+-- Create view to show vendor order line items
+create view VendorOrderLineItems as
+select Order_ID, Vendor_ID, Product_ID, Amount_Bought
+from Vendor_Order_Details;
+
+--create role for inventory management team (idea was this could help track inventory, how many products we have in stock left)
+create role InventoryManager;
+grant select, insert, update
+on Vendor_Order_Details
+to InventoryManager;
+
 
 
 
