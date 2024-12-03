@@ -1,3 +1,20 @@
+--EmployeeDashboard View
+
+create view EmployeeDashboard as
+select 
+
+ID as Employee_ID,
+Name as Employee_Name,
+Age as Employee_Age,
+Salary as Employee_Salary,
+Works_At as Employee_Works,
+Role as Employee_Role
+
+
+from Employees;
+
+
+
 /*
 How it's structured:
 
