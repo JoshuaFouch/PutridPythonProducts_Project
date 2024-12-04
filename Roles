@@ -23,8 +23,8 @@ grant select, update, delete on Employees to Manager;
 grant select, update, delete on Partners to Manager;
 grant select, update, delete on Customer_Orders to Manager;
 grant select, update, delete on Customer_Order_Details to Manager;
-grant select, update, delete on Vendors_Orders to Manager;
-grant select, update, delete on Vendors_Order_Details to Manager;
+grant select, update, delete on Vendor_Orders to Manager;
+grant select, update, delete on Vendor_Order_Details to Manager;
 
 
 create role Employees_Team
