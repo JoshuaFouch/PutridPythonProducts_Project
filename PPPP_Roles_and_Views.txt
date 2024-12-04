@@ -29,6 +29,23 @@ left join Partners P on M.ID = P.Manager_ID
 left join Vendors V on P.Vendor_ID = V.ID
 left join Employees E on M.ID = E.Manager;
 
+
+--CustomerDashboard
+--customer view
+create view CustomerDashboard as
+select 
+
+--customer info
+C.ID as Customer_ID,
+C.Name as Customer_Name,
+C.Credit_card as Customer_Credit_card,
+
+--customer orders
+P.ID as CustomerOrderID
+
+from Customers as C, Customer_Orders as P;
+
+
 -- VendorDashboard
 
 create view VendorDashboard as
