@@ -29,7 +29,19 @@ left join Partners P on M.ID = P.Manager_ID
 left join Vendors V on P.Vendor_ID = V.ID
 left join Employees E on M.ID = E.Manager;
 
+-- VendorDashboard
 
+create view VendorDashboard as
+select
+	-- vendor info
+	V.ID as MyID,
+	V.Name as Name,
+	V.Partner,
+
+	-- Vendors Orders
+	A.ID as MyOrderID
+
+from Vendors as V, Vendor_Orders as A;
 
 
 --EmployeeDashboard View
