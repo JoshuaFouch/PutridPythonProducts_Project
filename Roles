@@ -8,6 +8,7 @@ create role Vendor
 	grant select, insert, update on Vendor_Orders to Vendor
 	grant select, insert, update on Vendor_Order_Details to Vendor
 
+-- Manager Role
 create role Manager;
 
 grant select on Factories to Manager;
@@ -27,6 +28,7 @@ grant select, update, delete on Vendor_Orders to Manager;
 grant select, update, delete on Vendor_Order_Details to Manager;
 
 
+-- Employee Role
 create role Employees_Team
 grant select
 on Employees
