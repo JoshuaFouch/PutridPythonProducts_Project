@@ -1,247 +1,188 @@
 /*factories*/
 insert into Factories
-	values('4020 Oak Lane', 'TurboChem', 'Chemical');
-    
-insert into Factories
-	values ('5123 Elm Avenue', 'ToolMart', 'Tool');
-
-INSERT INTO Factories (Location, Factory_Name, Category_Specialty ) 
-	VALUES ('3841 Maple Street', 'PureChem', 'Chemical');
-
-INSERT INTO Factories (Location, Factory_Name, Category_Specialty ) 
-	VALUES ('2156 Willow Way', 'NexGen Tools', 'Tool');
-
-insert into Factories
-	values ('7624 Pine Road', 'Elite Chemicals', 'Chemical'),
-	       ('9921 Steel Street','TechPurify', 'Purification');
-
-insert into Factories
-	values('4845 Suncrest Avenue', 'AeroTools', 'Tool'),
-	       ('7768 Iron Way', 'CleanPur', 'Purification'),
-	       ('9889 Cloud Blvd', 'GeoChem', 'Chemical');
+	values
+	('4020 Oak Lane', 'TurboChem', 'Chemical'),
+	('5123 Elm Avenue', 'ToolMart', 'Tool'),
+	('3841 Maple Street', 'PureChem', 'Chemical'),
+	('2156 Willow Way', 'NexGen Tools', 'Tool'),
+	('7624 Pine Road', 'Elite Chemicals', 'Chemical'),
+	('9921 Steel Street', 'TechPurify', 'Purification'),
+	('4845 Suncrest Avenue', 'AeroTools', 'Tool'),
+	('7768 Iron Way', 'CleanPur', 'Purification'),
+	('9889 Cloud Blvd', 'GeoChem', 'Chemical'),
+	('3000 Oak Drive', 'FastTools', 'Tool'),
+	('1245 Elm Crescent', 'UltraChem', 'Chemical'),
+	('2789 Maple Hill', 'RedGear', 'Tool'),
+	('4901 Pine Road', 'GreenPur', 'Chemical'),
+	('2134 Steel Lane', 'SuperTools', 'Tool'),
+	('6592 Ironwood Avenue', 'PowerChem', 'Chemical'),
+	('4901 Cedar Street', 'PowerGear', 'Tool'),
+	('2034 Willow Way', 'ChemPro', 'Chemical'),
+	('8923 Birch Road', 'NextGen Chemicals', 'Chemical'),
+	('3442 Oak Street', 'StrongTools', 'Tool');
 
 /*Managers*/
 insert into Managers (Name, Age, Salary, Factory)
-	values ('Anna Bright', 46, 78000, '4020 Oak Lane');
-    
-insert into Managers (Name, Age, Salary, Factory)
-	values ('Charlie Cox', 52, 93000, '5123 Elm Avenue');
-
-INSERT INTO Managers (Name, Age, Salary, Factory) 
-	VALUES ('Sophie', 28, 10500, '3841 Maple Street');
-
-INSERT INTO Managers (Name, Age, Salary, Factory) 
-	VALUES ('Liam', 39, 105000, '2156 Willow Way');
-
-insert into Managers (Name, Age, Salary, Factory)
-	values ('Ellen Steel', 37, 75000, '7624 Pine Road'),
-	       ('Chris Stone', 43, 71000, '9921 Steel Street');
-
-insert into Managers (Name, Age, Salary, Factory)
-	values ('Jack Diamond', 38, 98000, '4845 Suncrest Avenue'),
-	       ('Helen White', 45, 86000, '7768 Iron Way'),
-	       ('Vera Gold', 41, 88000, '9889 Cloud Blvd');
+	values
+	('Anna Bright', 46, 78000, '4020 Oak Lane'),
+	('Charlie Cox', 52, 93000, '5123 Elm Avenue'),
+	('Sophie', 28, 10500, '3841 Maple Street'),
+	('Liam', 39, 105000, '2156 Willow Way'),
+	('Ellen Steel', 37, 75000, '7624 Pine Road'),
+	('Chris Stone', 43, 71000, '9921 Steel Street'),
+	('Jack Diamond', 38, 98000, '4845 Suncrest Avenue'),
+	('Helen White', 45, 86000, '7768 Iron Way'),
+	('Vera Gold', 41, 88000, '9889 Cloud Blvd'),
+	('Misty Clear', 39, 75000, '3000 Oak Drive'),
+	('Rob Fields', 31, 85000, '1245 Elm Crescent'),
+	('Nina Gem', 43, 64000, '2789 Maple Hill'),
+	('Katie Blue', 42, 92000, '4901 Pine Road'),
+	('Walt Steel', 44, 80000, '2134 Steel Lane'),
+	('Adam Smith', 41, 92000, '6592 Ironwood Avenue'),
+	('Tina Richards', 36, 76000, '4901 Cedar Street'),
+	('George Clark', 49, 100000, '2034 Willow Way'),
+	('Nancy Grey', 40, 95000, '8923 Birch Road'),
+	('Paul Knight', 38, 80000, '3442 Oak Street');
 
 /*Employees*/
 insert into Employees (Name, Age, Salary, Works_At, Manager, Role)
-	values ('Sammy Wood', 29, 23000, '4020 Oak Lane', 20000, 'Assembly Worker'),
-    	       ('Tina Fluff', 38, 46000, '5123 Elm Avenue', 20001, 'Sales');
+	values
+	('Sammy Wood', 29, 23000, '4020 Oak Lane', 20000, 'Assembly Worker'),
+	('Tina Fluff', 38, 46000, '5123 Elm Avenue', 20001, 'Sales'),
+	('Bobby', 26, 6500, '2156 Willow Way', 20002, 'Secretary'),
+	('Ron', 34, 15800, '2156 Willow Way', 20003, 'Sales'),
+	('Katy Stone', 50, 54000, '7624 Pine Road', 20004, 'Marketing'),
+	('Walt Steel', 42, 67000, '9921 Steel Street', 20005, 'Sales'),
+	('Misty Clear', 39, 35000, '4845 Suncrest Avenue', 20006, 'IT'),
+	('Rob Fields', 31, 43000, '7768 Iron Way', 20007, 'Marketing'),
+	('Nina Gem', 43, 49000, '9889 Cloud Blvd', 20008, 'Assembly Worker'),
+	('James Lee', 25, 55000, '3000 Oak Drive', 20009, 'Engineer'),
+	('Laura Wells', 29, 45000, '1245 Elm Crescent', 20010, 'Secretary'),
+	('David Green', 36, 62000, '2789 Maple Hill', 20011, 'Sales'),
+	('Paul Dawson', 32, 58000, '4901 Pine Road', 20012, 'Assembly Worker'),
+	('Sandra Juno', 33, 71000, '2134 Steel Lane', 20013, 'Marketing'),
+	('Tommy Blue', 40, 66000, '6592 Ironwood Avenue', 20014, 'Sales'),
+	('Linda Jordan', 30, 59000, '4901 Cedar Street', 20015, 'Engineer'),
+	('John Matthews', 28, 72000, '2034 Willow Way', 20016, 'Secretary'),
+	('Eric Black', 35, 51000, '8923 Birch Road', 20017, 'IT'),
+	('Rachel Grey', 37, 55000, '3442 Oak Street', 20018, 'Sales'),
+	('Jessica Gold', 40, 67000, '4020 Oak Lane', 20019, 'Admin');
 
-INSERT INTO Employees (Name, Age, Salary, Works_At, Manager, Role)
-	VALUES ('Bobby', 26, 6500, '2156 Willow Way', 20002, 'Secretary');
-
-INSERT INTO Employees (Name, Age, Salary, Works_At, Manager, Role)
-	VALUES ('Ron', 34, 15800, '2156 Willow Way', 20003, 'Sales');
-
-insert into employees (Name, Age, Salary, Works_At, Manager, Role)
-	values ('Katy Stone', 50, 54000, '7624 Pine Road', 20004, 'Marketing'),
-	('Walt Steel', 42, 67000, '9921 Steel Street', 20005, 'Sales');
-
-insert into Employees (Name, Age, Salary, Works_At, Manager, Role)
-	values ('Misty Clear', 39, 35000, '4845 Suncrest Avenue', 20006, 'IT'),
-	       ('Rob Fields', 31, 43000, '7768 Iron Way', 20007, 'Marketing'),
-	       ('Nina Gem', 43, 49000, '9889 Cloud Blvd', 20008, 'Assembly Worker');
-
-/*products*/
+/*Products*/
 insert into Products (Name, Stock, Price, Category)
-	values ('Power Drill 5000', 15, 99.99, 'Tool');
-
-insert into Products (Name, Stock, Price, Category)
-	values ('Dust Buster', 9, 75.00, 'Tool');
-
-INSERT INTO Products (Name, Stock, Price, Category ) 
-	VALUES ('Impact Driver', 10, 120, 'Tool');
-
-INSERT INTO Products (Name, Stock, Price, Category ) 
-	VALUES ('FlexiMop', 18, 40, 'Tool');
-
-insert into Products (Name, Stock, Price, Category) 
-values
+	values
+	('Power Drill 5000', 15, 99.99, 'Tool'),
+	('Dust Buster', 9, 75.00, 'Tool'),
+	('Impact Driver', 10, 120, 'Tool'),
+	('FlexiMop', 18, 40, 'Tool'),
 	('Solvent X', 25, 15, 'Chemical'),
-	('Mini Hammer', 30, 60, 'Tool');
+	('Mini Hammer', 30, 60, 'Tool'),
+	('Power Scrubber', 40, 130, 'Tool'),
+	('Ultra Filter', 55, 80, 'Purification'),
+	('Oil Cleaner', 22, 25, 'Chemical'),
+	('FlexiSander', 40, 90, 'Tool'),
+	('HammerPro 2000', 20, 75, 'Tool'),
+	('Precision Filter', 60, 150, 'Purification'),
+	('TurboMop', 38, 50, 'Tool'),
+	('Dust Pro Max', 45, 100, 'Tool'),
+	('ChemShield', 30, 65, 'Chemical'),
+	('UltraPurifier', 25, 95, 'Purification'),
+	('Mighty Drill', 12, 105, 'Tool'),
+	('MaxiSander', 20, 85, 'Tool'),
+	('CleanZone', 35, 110, 'Purification');
 
-insert into Products (Name, Stock, Price, Category)
-	values ('Power Scrubber', 40, 130, 'Tool'),
-	       ('Ultra Filter', 55, 80, 'Purification'),
-	       ('Oil Cleaner', 22, 25, 'Chemical');
-
-/*makes*/
+/*Makes*/
 insert into Makes
-	values ('4020 Oak Lane', 40009, 9, 120);
-    
-insert into Makes
-	values ('5123 Elm Avenue', 40010, 7, 400);
+	values
+	('4020 Oak Lane', 40009, 9, 120),
+	('5123 Elm Avenue', 40010, 7, 400),
+	('3841 Maple Street', 40011, 8, 3500),
+	('2156 Willow Way', 40012, 6, 400),
+	('7624 Pine Road', 40013, 7, 250),
+	('9921 Steel Street', 40014, 8, 500),
+	('4845 Suncrest Avenue', 40015, 9, 1200),
+	('7768 Iron Way', 40016, 7, 1500),
+	('9889 Cloud Blvd', 40017, 8, 1000),
+	('3000 Oak Drive', 40018, 8, 1300),
+	('1245 Elm Crescent', 40019, 9, 1100),
+	('2789 Maple Hill', 40020, 7, 800),
+	('4901 Pine Road', 40021, 8, 950),
+	('2134 Steel Lane', 40022, 6, 1100),
+	('6592 Ironwood Avenue', 40023, 7, 900),
+	('4901 Cedar Street', 40024, 8, 1400),
+	('2034 Willow Way', 40025, 9, 1150),
+	('8923 Birch Road', 40026, 8, 1200),
+	('3442 Oak Street', 40027, 9, 800);
 
-INSERT INTO Makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced) 
-	VALUES ('3841 Maple Street', 40011, 8, 3500);
-
-INSERT INTO Makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced) 
-	VALUES ('2156 Willow Way', 40012, 6, 400);
-
-insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
-	values ('7624 Pine Road', 40013, 7, 250);
-
-insert into makes (Factory_Location, Product_ID, Quality_Grade, Num_Produced)
-	values ('9921 Steel Street', 40014, 8, 500);
-
-insert into Makes
-	values ('4845 Suncrest Avenue', 40015, 9, 1200),
-	       ('7768 Iron Way', 40016, 7, 1500),
-	       ('9889 Cloud Blvd', 40017, 8, 1000);
-
-/*customers*/
-insert into Customers (Name, Credit_card)
-	values ('Fiona Young', 3345667890123456);
-
-insert into Customers (Name, Credit_card)
-	values ('Gloria Red', 2312345678901234);
-
-INSERT INTO Customers (Name, Credit_card) 
-	VALUES ('Sally Blue', 9876543210123456);
-
-INSERT INTO Customers (Name, Credit_card) 
-	VALUES ('Tommy Lime', 1928374655468792);
-
-insert into customers (Name, Credit_card)
-	values ('Daryl', 2948774358746872),
-	       ('Robin', 9456482312349873);
-
-insert into Customers (Name, Credit_card)
-	values ('David Gold', 1827364537289123),
-	       ('Anna White', 1679832648573023),
-	       ('Ben Grey', 1875647394872056);
-
-/*customer orders*/
-insert into Customer_Orders (Customer_ID, Total_Price)
-	values (50010, 102);
-
-insert into Customer_Orders (Customer_ID, Total_Price)
-	values (50011, 150);
-
-INSERT INTO Customer_Orders (Customer_ID, Total_Price) 
-	VALUES (50012, 200);
-
-INSERT INTO Customer_Orders (Customer_ID, Total_Price) 
-	VALUES (50013, 250);
-
-insert into Customer_Orders (Customer_ID, Total_Price)
-	values (50014, 220);
-
-insert into Customer_Orders (Customer_ID, Total_Price)
-	values(50015, 60);
-
-insert into Customer_Orders (Customer_ID, Total_Price)
-	values (50016, 300),
-	       (50017, 350),
-	       (50018, 190);
-
-/*customer order details*/
-insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
-values (1000009, 50010, 40009, 1);
-
-insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
-values (1000010, 50011, 40010, 2);
-
-INSERT INTO Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought) 
-	VALUES (1000011, 50012, 40011, 1);
-
-INSERT INTO Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought) 
-	VALUES (1000012, 50013, 40012, 3);
-
-insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
-	values(1000013, 50014, 40013, 2);
-
-insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
-	values(1000014, 50015, 40014, 5);
-
-insert into Customer_Order_Details (Order_ID, Customer_ID, Product_ID, Amount_Bought)
-	values (1000015, 50016, 40015, 2),
-	       (1000016, 50017, 40016, 4),
-	       (1000017, 50018, 40017, 3);
-
-/*vendors*/
+/*Vendors*/
 insert into Vendors (Name, Partner)
-values ('ToolMasters', 20000);
+	values
+	('ToolMasters', 20000),
+	('HomeWorks', 20001),
+	('GreenPur', 20002),
+	('Precision Tools', 20003),
+	('GizmoWorks', 20004),
+	('TechnoGear', 20005),
+	('MaxiPower', 20006),
+	('QuickFix', 20007),
+	('FreshTech', 20008),
+	('ProChemicals', 20009),
+	('ProTools', 20010),
+	('UltraChem', 20011),
+	('SpeedyTech', 20012),
+	('NextGen Tools', 20013),
+	('ChemCraft', 20014),
+	('MegaTech', 20015),
+	('FreshPur', 20016),
+	('TurboFix', 20017),
+	('SolidTools', 20018),
+	('PowerFix', 20019);
 
-insert into Vendors (Name, Partner)
-values ('HomeWorks', 20001);
-
-INSERT INTO Vendors (Name, Partner) 
-	VALUES ('GreenPur', 20002);
-
-INSERT INTO Vendors (Name, Partner) 
-	VALUES ('Precision Tools', 20003);
-
-insert into vendors (Name, Partner)
-	values ('GizmoWorks', 20004);
-
-insert into vendors (Name, Partner)
-	values ('TechnoGear', 20005);
-
-insert into Vendors (Name, Partner)
-	values ('MaxiPower', 20006),
-	       ('QuickFix', 20007),
-	       ('FreshTech', 20008);
-
-/*vendor orders*/
+/*Vendor Orders*/
 insert into Vendor_Orders (Vendor_ID, Date_Ordered, Total_Price)
-	values (1000009, '2024-12-01', 300);
+	values
+	(1000009, '2024-12-01', 300),
+	(1000010, '2024-12-02', 420),
+	(1000011, '2024-12-03', 400),
+	(1000012, '2024-12-04', 280),
+	(1000013, '2024-12-05', 500),
+	(1000014, '2024-12-06', 350),
+	(1000015, '2024-12-07', 450),
+	(1000016, '2024-12-08', 380),
+	(1000017, '2024-12-09', 490),
+	(1000018, '2024-12-10', 520),
+	(1000019, '2024-12-11', 510),
+	(1000020, '2024-12-12', 470),
+	(1000021, '2024-12-13', 560),
+	(1000022, '2024-12-14', 530),
+	(1000023, '2024-12-15', 600),
+	(1000024, '2024-12-16', 450),
+	(1000025, '2024-12-17', 480),
+	(1000026, '2024-12-18', 400),
+	(1000027, '2024-12-19', 430),
+	(1000028, '2024-12-20', 470);
 
-insert into Vendor_Orders (Vendor_ID, Date_Ordered, Total_Price)
-	values (1000010, '2024-12-02', 420);
-
-INSERT INTO Vendor_Orders (Vendor_ID, Date_Ordered, Total_Price) 
-	VALUES (1000011, '2024-12-03', 400);
-
-INSERT INTO Vendor_Orders (Vendor_ID, Date_Ordered, Total_Price) 
-	VALUES (1000012, '2024-12-04', 280);
-
-insert into Vendor_Orders (Vendor_ID, Date_Ordered, Total_Price)
-	values (1000013, '2024-12-05', 500);
-
-insert into Vendor_Orders (Vendor_ID, Date_Ordered, Total_Price)
-	values (1000014, '2024-12-06', 350);
-
-/*vendor order details*/
+/*Vendor Order Details*/
 insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Ordered)
-values (1000009, 1000009, 40009, 2);
+	values
+	(1000009, 1000009, 40009, 2),
+	(1000010, 1000010, 40010, 5),
+	(1000011, 1000011, 40011, 1),
+	(1000012, 1000012, 40012, 3),
+	(1000013, 1000013, 40013, 4),
+	(1000014, 1000014, 40014, 2),
+	(1000015, 1000015, 40015, 1),
+	(1000016, 1000016, 40016, 1),
+	(1000017, 1000017, 40017, 3),
+	(1000018, 1000018, 40018, 4),
+	(1000019, 1000019, 40019, 2),
+	(1000020, 1000020, 40020, 5),
+	(1000021, 1000021, 40021, 2),
+	(1000022, 1000022, 40022, 1),
+	(1000023, 1000023, 40023, 3),
+	(1000024, 1000024, 40024, 2),
+	(1000025, 1000025, 40025, 4),
+	(1000026, 1000026, 40026, 3),
+	(1000027, 1000027, 40027, 1),
+	(1000028, 1000028, 40028, 5);
 
-insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Ordered)
-values (1000010, 1000010, 40010, 5);
-
-INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Ordered) 
-	VALUES (1000011, 1000011, 40011, 1);
-
-INSERT INTO Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Ordered) 
-	VALUES (1000012, 1000012, 40012, 3);
-
-insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Ordered)
-	values (1000013, 1000013, 40013, 4);
-
-insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Ordered)
-	values (1000014, 1000014, 40014, 2);
-
-insert into Vendor_Order_Details (Order_ID, Vendor_ID, Product_ID, Amount_Ordered)
-	values (1000015, 1000015, 40015, 1),
-	       (1000016, 1000016, 40016, 1),
-	       (1000017, 1000017, 40017, 3);
