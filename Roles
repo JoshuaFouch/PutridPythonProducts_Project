@@ -2,7 +2,9 @@
 
 create role Vendor
 	grant select on Products to Vendor
+	grant select on VendorDashboard to Vendor
 	grant select on Partners to Vendor
+	grant select on Vendors to Vendor
 	grant select, insert, update on Vendor_Orders to Vendor
 	grant select, insert, update on Vendor_Order_Details to Vendor
 
