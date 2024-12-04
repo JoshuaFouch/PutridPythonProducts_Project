@@ -25,3 +25,12 @@ grant select, update, delete on Customer_Orders to Manager;
 grant select, update, delete on Customer_Order_Details to Manager;
 grant select, update, delete on Vendors_Orders to Manager;
 grant select, update, delete on Vendors_Order_Details to Manager;
+
+
+create role Employees_Team
+grant select
+on Employees
+to Employees_Team
+grant select
+on EmployeeDashboard
+to Employees_Team
