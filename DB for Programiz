@@ -1,0 +1,147 @@
+/*Putrid Python Pristine Products*/
+
+/* Drops for Programiz */
+-- Uncomment to drop tables if they already exist
+
+DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Customers;
+DROP TABLE IF EXISTS Shippings;
+DROP TABLE IF EXISTS Factories;
+DROP TABLE IF EXISTS Managers;
+DROP TABLE IF EXISTS Employees;
+DROP TABLE IF EXISTS Boss;
+DROP TABLE IF EXISTS Products;
+DROP TABLE IF EXISTS Makes;
+DROP TABLE IF EXISTS Customers;
+DROP TABLE IF EXISTS Customer_Orders;
+DROP TABLE IF EXISTS Customer_Order_Details;
+DROP TABLE IF EXISTS Vendors;
+DROP TABLE IF EXISTS Partners;
+DROP TABLE IF EXISTS Vendor_Orders;
+DROP TABLE IF EXISTS Vendor_Order_Details;
+
+
+/* DB Definitions */
+
+/* Factories */
+CREATE TABLE Factories (
+  Location TEXT PRIMARY KEY,
+  Factory_Name TEXT NOT NULL,
+  Category_Specialty TEXT CHECK(Category_Specialty IN ('Chemical', 'Tool', 'Purification', 'Varied'))
+);
+
+/* Managers */
+CREATE TABLE Managers (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  Name TEXT NOT NULL,
+  Age INTEGER CHECK(Age >= 23 AND Age <= 80),
+  Salary INTEGER CHECK(Salary >= 0),
+  Hire_Date TEXT DEFAULT CURRENT_TIMESTAMP,
+  Factory TEXT,
+  FOREIGN KEY (Factory) REFERENCES Factories(Location)
+);
+
+/* Employees */
+CREATE TABLE Employees (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  Name TEXT NOT NULL,
+  Age INTEGER CHECK(Age >= 14 AND Age <= 80),
+  Salary INTEGER CHECK(Salary >= 0),
+  Works_At TEXT,
+  Manager INTEGER,
+  Role TEXT DEFAULT 'Varied' CHECK(Role IN ('Assembly Worker', 'Janitor', 'Secretary', 'Marketing', 'IT', 'Sales', 'Varied')),
+  FOREIGN KEY (Works_At) REFERENCES Factories(Location),
+  FOREIGN KEY (Manager) REFERENCES Managers(ID),
+  UNIQUE (ID, Manager)
+);
+
+/* Boss */
+CREATE TABLE Boss (
+  Manager_ID INTEGER,
+  Employee_ID INTEGER UNIQUE,
+  FOREIGN KEY (Manager_ID) REFERENCES Managers(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (Employee_ID) REFERENCES Employees(ID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+/* Products */
+CREATE TABLE Products (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  Name TEXT NOT NULL,
+  Stock INTEGER CHECK(Stock >= 0),
+  Price INTEGER CHECK(Price >= 0),
+  Category TEXT CHECK(Category IN ('Chemical', 'Tool', 'Purification', 'Varied'))
+);
+
+/* Makes */
+CREATE TABLE Makes (
+  Factory_Location TEXT,
+  Product_ID INTEGER,
+  Quality_Grade INTEGER CHECK(Quality_Grade >= 0 AND Quality_Grade <= 10),
+  Num_Produced INTEGER CHECK(Num_Produced >= 0),
+  FOREIGN KEY (Factory_Location) REFERENCES Factories(Location),
+  FOREIGN KEY (Product_ID) REFERENCES Products(ID)
+);
+
+/* Customers */
+CREATE TABLE Customers (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  Name TEXT,
+  Credit_card TEXT CHECK(LENGTH(Credit_card) = 16)
+);
+
+/* Customer_Orders */
+CREATE TABLE Customer_Orders (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  Customer_ID INTEGER,
+  Order_Date TEXT DEFAULT CURRENT_TIMESTAMP,
+  Total_Price INTEGER CHECK(Total_Price > 0),
+  FOREIGN KEY (Customer_ID) REFERENCES Customers(ID)
+);
+
+/* Customer_Order_Details */
+CREATE TABLE Customer_Order_Details (
+  Order_ID INTEGER,
+  Customer_ID INTEGER,
+  Product_ID INTEGER,
+  Amount_Bought INTEGER CHECK(Amount_Bought > 0),
+  FOREIGN KEY (Order_ID) REFERENCES Customer_Orders(ID),
+  FOREIGN KEY (Customer_ID) REFERENCES Customers(ID),
+  FOREIGN KEY (Product_ID) REFERENCES Products(ID)
+);
+
+/* Vendors */
+CREATE TABLE Vendors (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  Name TEXT NOT NULL,
+  Partner INTEGER,
+  FOREIGN KEY (Partner) REFERENCES Managers(ID),
+  UNIQUE (ID, Partner)
+);
+
+/* Partners */
+CREATE TABLE Partners (
+  Manager_ID INTEGER,
+  Vendor_ID INTEGER UNIQUE,
+  FOREIGN KEY (Manager_ID) REFERENCES Managers(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (Vendor_ID) REFERENCES Vendors(ID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+/* Vendor_Orders */
+CREATE TABLE Vendor_Orders (
+  ID INTEGER PRIMARY KEY AUTOINCREMENT,
+  Vendor_ID INTEGER,
+  Order_Date TEXT DEFAULT CURRENT_TIMESTAMP,
+  Total_Price INTEGER CHECK(Total_Price > 0),
+  FOREIGN KEY (Vendor_ID) REFERENCES Vendors(ID)
+);
+
+/* Vendor_Order_Details */
+CREATE TABLE Vendor_Order_Details (
+  Order_ID INTEGER,
+  Vendor_ID INTEGER,
+  Product_ID INTEGER,
+  Amount_Bought INTEGER CHECK(Amount_Bought >= 0),
+  FOREIGN KEY (Order_ID) REFERENCES Vendor_Orders(ID),
+  FOREIGN KEY (Vendor_ID) REFERENCES Vendors(ID),
+  FOREIGN KEY (Product_ID) REFERENCES Products(ID)
+);
